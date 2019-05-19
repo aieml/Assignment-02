@@ -1,6 +1,14 @@
 # Assignment-02
 This assignment is based on KNN classifier, you have to apply KNN classifier to the given dataset and provide the results as required.
 
+## Introduction
+
+- In this assignment you need to train a KNN Machine Learning Algorithm for the given dataset in "heart.csv".
+- This dataset is consisted of 14 columns and 303 rows. The 1st 13 columns(0th-12th) will be considered as features and last row is consists with labels. More information is given in the next section
+- All the necessary information regarding reading the dataset from the cdv file and loading into numpy arrays is given in **How to read the dataset** section below
+- You need to split the dataset for training and testing, **testing size should be 20% of the whole dataset**
+- Then train the ML algorithm, and find and print the accuracy between the actual and predicted results.
+- Part of a code done in last week in the class is given as a sample code at the end
 
 ## Dataset, features and labels
 
@@ -41,5 +49,49 @@ pip install pandas
 [read more about pandas](https://pandas.pydata.org/)
 
 
+refer "1.0 Reading the dataset.py" 
+
+```python
+dataset=pd.read_csv('heart.csv').as_matrix()
+```
+This code reads the given csv file and stores it in a numpy array, in this case the size of the dataset array is 303x14.
+
+the 1st row of the dataset, which consists the column titles will be automatically neglected when the file is beign read.
+
+```python
+data=dataset[:,0:13]
+```
+from 0th upto 12th columns will be assign into data (features), size will be 303x13 
+
+```python
+target=dataset[:,13]
+```
+13th column will be assigned as to the target, which consists the labels of 0 and 1
 
 
+## Sample code
+
+```python
+
+from sklearn.model_selection import train_test_split
+
+train_data,test_data,train_target,test_target=train_test_split(data,target,test_size=0.5)
+#print(test_target)
+
+from sklearn.neighbors import KNeighborsClassifier #load KNN classifer
+
+clsfr=KNeighborsClassifier(n_neighbors=3)    #KNN classifier is loaded to clsfr
+
+clsfr.fit(train_data,train_target)  #training the ML algorithm(KNN)
+
+results=clsfr.predict(test_data)
+
+print('Predicted:',results)
+print('Actual:',test_target)
+
+from sklearn.metrics import accuracy_score
+
+accuracy=accuracy_score(test_target,results)
+
+print('accuracy:',accuracy)
+```
