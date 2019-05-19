@@ -1,8 +1,8 @@
 # Assignment-02-Part-I
 This assignment is based on KNN classifier, you have to apply KNN classifier to the given dataset and provide the results as required.
 
-## Introduction
-
+## Instructions
+- Download the Assignment-02-Part-I folder
 - In this assignment you need to train a KNN Machine Learning Algorithm for the given dataset in "heart.csv".
 - This dataset is consisted of 14 columns and 303 rows. The 1st 13 columns(0th-12th) will be considered as features and last row is consists with labels. More information is given in the next section
 - All the necessary information regarding reading the dataset from the cdv file and loading into numpy arrays is given in **How to read the dataset** section below
