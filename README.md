@@ -1,4 +1,4 @@
-# Assignment-02
+# Assignment-02-Part-I
 This assignment is based on KNN classifier, you have to apply KNN classifier to the given dataset and provide the results as required.
 
 ## Introduction
