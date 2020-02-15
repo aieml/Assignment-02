@@ -52,7 +52,7 @@ pip install pandas
 refer "1.0 Reading the dataset.py" 
 
 ```python
-dataset=pd.read_csv('heart.csv').as_matrix()
+dataset=pd.read_csv('heart.csv').values
 ```
 This code reads the given csv file and stores it in a numpy array, in this case the size of the dataset array is 303x14.
 
